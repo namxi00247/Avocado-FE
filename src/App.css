@@ -1,0 +1,734 @@
+/* general */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Manrope&family=Roboto&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.h3{
+  font-family: 'Manrope';
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5vw;
+  line-height: 128%;
+  /* identical to box height, or 44px */
+
+
+  /* Blue / 90 */
+
+  color: #133774;
+}
+
+.main-title{
+  /* Manrope / H2 */
+  text-align: center;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4vw;
+  line-height: 120%;
+  /* identical to box height, or 72px */
+
+  letter-spacing: -0.025em;
+
+  /* Blue / 100 */
+
+  color: #0C2146;
+}
+
+.row{
+  display: flex;
+}
+.col{
+  width: 50%;
+}
+
+.btn{
+  box-shadow: 0px 2px 4px rgba(43, 102, 46, 0.2), 0px 4px 8px rgba(67, 160, 71, 0.2);
+  border: 0;
+  width: 30vw;
+  border-radius: 49px;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 128%;
+
+  margin-top: 3vh;
+}
+
+
+.white-btn{
+  margin: none;
+}
+.green-btn{
+  background-color: #37833B;
+  color: whitesmoke;
+}
+
+.form-label{
+  /* Manrope / H5 */
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2vw;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+
+  /* Green / 70 */
+
+  color: #37833B;
+  margin-bottom: 0.2vw;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.checkbox-label{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9vw;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0075em;
+  margin-left: 1vw;
+  /* Gray / 100 */
+
+  color: #19191D;
+}
+
+.h1{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6vw;
+  line-height: 120%;
+  /* or 115px */
+  margin-top: 3vw;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.026em;
+
+  /* Gray / 100 */
+
+  color: #19191D;
+}
+
+.h5{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 120%;
+  /* or 115px */
+  margin-top: 3vw;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.026em;
+
+  /* Gray / 100 */
+
+  color: #37833B;
+}
+
+.green{
+  color:#37833B;
+}
+#content1{
+  margin-top: 1vw;
+  font-size: 3vw;
+}
+
+.divider{
+  width: 100%;
+  height: 4px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(90deg, #DCEDDD 0%, #D2E9DB 21.18%, #C1E3D8 33.68%, #B3DDD6 50.87%, #A4D8D3 72.74%, #9AD4D1 85.24%, #8DCFCF 100%);
+}
+
+.Container{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* Landing */
+
+
+.big-container{
+  background-color: #FFF8EB;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-background{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: 420px;
+  width: 40%;
+  position: absolute;
+  background: linear-gradient(90deg, #DCEDDD 0%, #D2E9DB 21.18%, #C1E3D8 33.68%, #B3DDD6 50.87%, #A4D8D3 72.74%, #9AD4D1 85.24%, #8DCFCF 100%);
+}
+
+#landing-container{
+  width: 95%;
+  height: 93%;
+  background-color: white;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#students-btn{
+  color: #F5FAF5;
+  background: #6FCF97;
+}
+
+/* Student Forms */
+.container{
+  background-color: white;
+  padding-top: 5%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.student-border{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  margin-top: 3vh;
+  width: 90%;
+  /* Gradients / Green-Teal-light */
+  padding: 10px;
+
+
+  background: linear-gradient(90deg, #DCEDDD 0%, #8DCFCF 100%);
+}
+
+.student-container{
+  background-color: white;
+  padding-left: 3vw;
+  padding-top: 4vw;
+  padding-bottom: 2vw;
+  margin-top:1vw;
+  margin-bottom:1vw;
+  width: 95%;
+
+}
+
+.form-div{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 1vw;
+}
+
+.form-div2{
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  margin-bottom: 1vw;
+}
+
+.input-shorttext{
+  height: 2.5vw;
+  /* Input Master */
+
+
+  box-sizing: border-box;
+
+  /* Base/White 100% */
+
+  background: #FFFFFF;
+  /* Gray / 30 */
+
+  border: 1px solid #B4B4BB;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.input-longtext{
+  height: 6vw;
+  /* Input Master */
+
+
+  box-sizing: border-box;
+
+  /* Base/White 100% */
+
+  background: #FFFFFF;
+  /* Gray / 30 */
+
+  border: 1px solid #B4B4BB;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.checkboxdiv{
+  display: flex;
+}
+.checkbox-others{
+  margin: 0;
+  color: #5A5B6A;
+  font-weight: 700;
+  border: none;
+  border-bottom: solid 0.1vw #5A5B6A;
+  
+}
+
+.checkbox-input{
+  height: 1.2vw;
+  width: 1.2vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox-input:checked{
+  background-color:  #43A047;;
+}
+
+.table-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.table-heading{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: 700;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+
+  letter-spacing: 0.0075em;
+
+  /* Gray / 100 */
+
+  color: #19191D;
+}
+
+.checkbox-others-long{
+  margin: 0;
+  color: #5A5B6A;
+  font-weight: 700;
+  border: none;
+  border-bottom: solid 0.1vw #5A5B6A;
+  width: 28vw;
+}
+
+#small-info{
+  font-size: 0.7vw;
+}
+
+/* staff-login */
+#staff-login-container{
+  background-color: #e0eef1;
+}
+.row{
+  justify-content: center;
+}
+
+.row1{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.row2{
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+.manager{
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 124%;
+  /* or 60px */
+
+  letter-spacing: -0.01em;
+
+  /* Green / 100 */
+  color: #0C2146;
+  
+}
+.staff{
+  color: #132C14;
+}
+.choosen-hr{
+  border: 0.2vw solid #3aa968;
+  transform: rotate(-0.21deg);
+  width: 15vw;
+}
+
+.font-inter{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9vw;
+  line-height: 143%;
+  /* Gray / 100 */
+
+  color: #19191D;
+  margin-left: 1vw;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+#light-blue{
+  color:  #2979FF;;
+}
+
+.Content-selector{
+  margin-left: 13vw;
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+
+}
+.Content-selector button{
+  
+  /* Manrope / H5 */
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2vw;
+  line-height: 150%;
+  background-color: white;
+  border: none;
+
+  /* identical to box height, or 36px */
+
+
+  /* Green / 100 */
+
+  color: #132C14;
+  margin-top: 0.5vw;
+}
+
+/* Footer */
+footer{
+  background-color: #0C2146;
+  width: 100vw;
+  height: 3vw;
+  padding: 1vw;
+  margin-top: 2vw;
+}
+footer h6{
+  /* Manrope / H6 */
+  text-align: center;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1vw;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+
+  letter-spacing: 0.0075em;
+
+  /* Base/White 100% */
+
+  color: #FFFFFF;
+  }
+
+/* staff_personalinformation() */
+.personal_info_container{
+  margin: 2vw;
+  height: 25vw;
+  width: 55vw;
+  background-color:#EBF2FF;
+  display: flex;
+}
+.personal_info_container img{
+  width: 100%;
+  height: 25vw;
+}
+.personal_info_container .image-container{
+  width: 30vw;
+}
+.staff-sub-title{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 124%;
+  /* identical to box height, or 60px */
+
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-align: center;
+
+  /* Blue / 90 */
+
+  color: #133774;
+  margin-bottom: 2vw;
+}
+.personal_info_container .information-container{
+  margin: 0vw 0 0vw 2vw;
+  padding-top: 3vw;
+}
+.bold{
+  font-weight: bold;
+}
+.personal_info_container p{
+  margin: 0;
+  font-size: 1.5vw;
+}
+
+.personal-btn{
+  width: 15vw;
+  height: 7vw;
+  border: 0;
+
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3vw;
+  padding: 0.2vw;
+  line-height: 150%;
+  /* or 36px */
+
+  text-align: center;
+
+  /* Gray / 100 */
+
+  color: #19191D;
+  background: #FFFFFF;
+  box-shadow: 0.1px 0.5vw 1vw rgba(43, 102, 46, 0.2), 0.1px 0.5vw 1vw rgba(67, 160, 71, 0.2);
+  border-radius: 22px;
+  margin-bottom: 1vw;
+}
+.col{
+  text-align: center;
+}
+
+
+/* all students */
+.student_table_container{
+  margin: 3vw 0.5vw 0 0.5vw;
+  display: flex;
+  height: 70vh;
+  width: 85vw;
+}
+
+.student_table{
+  width: 100%;
+}
+
+.student_table thead{
+  background-color: #EBF2FF;;
+  width: 100%;
+  padding: 0.5vw;
+}
+.student_table th{
+  padding: 1.2vw;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 0.95vw;
+}
+.student_table td{
+  font-size: 1vw;
+  padding: 1vw;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.student_table .t0{
+  background-color: #FEFEFE;
+}
+
+.student_table .t1{
+  background-color: #EDEDF0;
+}
+.buttons_heading{
+  border: 0;
+  background-color: white;
+}
+.table_button{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #6FCF97;
+  /* Shadow Green / 4dp */
+
+  box-shadow: 0px 2px 4px rgba(43, 102, 46, 0.2), 0px 4px 8px rgba(67, 160, 71, 0.2);
+  border-radius: 99px;
+  border: 0;
+  margin: 0vw 1vw 0 1vw;
+  padding: 0.3vw 1vw 0.3vw 1vw;
+
+  font-size: 1vw;
+  width: 6vw;
+  }
+
+.student_table .checkbox-container{
+  display: flex;
+  justify-content: center;
+  width: 7vw;
+}
+#not-reach-out{
+  background-color: #97A0D6;
+  color: #FFFFFF;
+}
+#in-progress{
+  background-color: #FFE5B2;
+}
+#success{
+  background-color: #87C289;;
+}
+#fail{
+  background-color: #F44336;
+  color: #fff;
+}
+
+/* create Contract */
+.overlapper{
+  background-color: #5A5B6A;
+  opacity: 0.4;
+  position: absolute;
+  top: 0px;
+  height: 150vw;
+  width: 100vw;
+}
+.overlapper2{
+  background-color: #5A5B6A;
+  opacity: 0.4;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 110%;
+  width: 100%;
+}
+
+#contract-container{
+  position: absolute;
+  top: 12vw;
+}
+.input-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+  background: #6FCF97;
+  border-radius: 99px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: 0;
+  padding: 0.5vw 1vw 0.5vw 1vw;
+  color: #FEFEFE;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2vw;
+
+}
+#container-container{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+div{
+  margin: 0;
+  padding: 0;
+}
+
+.saving-box{
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  top: 10vw;
+  padding: 5vw;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.saving-container{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.row1 button{
+  border: 0;
+  background-color: white;
+}
+
+/* Manager page */
+.billing_table_container{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+tr input{
+  display: flex;
+  justify-content: center;
+}
