@@ -732,23 +732,3 @@ tr input{
   display: flex;
   justify-content: center;
 }
-
-.loadstudentfile{
-  border: 0;
-  background-color: transparent;
-  padding:1vw;
-  width: 100%;
-}
-.loadstudentfilet1{
-  border: 0;
-  background-color: transparent;
-  padding:1vw;
-  width: 100%;
-}
-
-.loadstudentfile:hover{
-  font-weight: bold;
-}
-.loadstudentfilet1:hover{
-  font-weight: bold;
-}

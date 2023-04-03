@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import StudentForms from './studentforms';
 import Staff_dashboard_link from './staffpage';
 import Manager_dashboard_link from './managerpage';
 

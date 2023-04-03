@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import StudentForms from './studentforms';
+import footer from './Components/footer.js';
+import ManagerNavbar from './Components/ManagerNavbar';
 import StaffLogin from './stafflogin';
+import staff_info from './Components/staffpersonalinfo';
+import staff_personalreport from './Components/report';
+import Studentform from './Components/studentform';
+import my_student_table from './Components/mystudenttable';
 
 let billing_report_example = [
     [1, 'Chocolate Chip', '11', 'Mentor 1-1 MV', '20,000,000', 'Fri, 5th Nov 2022', '10,000,000', '7'],
     [2, 'Chocolate Chip', '11', 'Mentor 1-1 MV', '20,000,000', 'Fri, 5th Nov 2022', '10,000,000', '7'],
     [3, 'Chocolate Chip', '11', 'Mentor 1-1 MV', '20,000,000', 'Fri, 5th Nov 2022', '10,000,000', '7'],
 ]
-
 let student_dict = [
     [
         '0',
@@ -45,24 +49,29 @@ let student_dict = [
         'not'
     ],
 ]
+let staff_dict = [
+    [0, 'Chocolate Chip', '123', 'Sales', 'Senior sales', '20/10/2002', '091029392', 'awohwdoa@gmail.com', '12', '1000'],
+    [1, 'Chocolate Chip', '123', 'Sales', 'Senior sales', '20/10/2002', '091029392', 'awohwdoa@gmail.com', '12', '1000'],
+    [2, 'Chocolate Chip', '123', 'Sales', 'Senior sales', '20/10/2002', '091029392', 'awohwdoa@gmail.com', '12', '1000']
+]
 
 
 const Manager_dashboard_link = () => {
     ReactDOM.render(< ManagerDashboard/>, document.getElementById('root'))
 }
-
 const Manager_all_students_link = () => {
     ReactDOM.render(< Manager_all_students/>, document.getElementById('root'))
 }
-
+const Manager_all_staff_link = () => {
+    ReactDOM.render(< Manager_all_staff/>, document.getElementById('root'))
+}
 
 
 const ManagerDashboard = () => {
     return(
         <div className='container'>
-            {ManagerNavbar('dashboard')}
-            {staff_personalinformation('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/1200px-Black_colour.jpg', 'Staff A', '123', '0132491034', 'staffA@gmail.com', '20/3/2020', 'Sales', 'Sales')}
-            {staff_personalreport('Sales Report', [['Pending Reach Out', 12], ['Ongoing Case', 12], ['Success Case', 12], ['Salary', 12000]])}
+            {ManagerNavbar('dashboard', Manager_dashboard_link, Manager_all_students_link, Manager_all_staff_link)}
+            {staff_info('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/1200px-Black_colour.jpg', 'Staff A', '123', '0132491034', 'staffA@gmail.com', '20/3/2020', 'Sales', 12, 12, 12, 12000)}
             {staff_personalreport('Revenue Report', [['Expected', 123423], ['Actual', 1223424], ['Remaining', 12234]])}
             {Overdue_Billing(billing_report_example)}
             {staff_personalreport('Salary Report', [['StaffA', 123423], ['StaffB', 1223424], ['StaffC', 12234], ['StaffA', 123423], ['StaffB', 1223424], ['StaffC', 12234], ['StaffB', 1223424], ['StaffC', 12234]])}
@@ -73,131 +82,23 @@ const ManagerDashboard = () => {
 const Manager_all_students = () => {
     return(
         <div className='container'>
-            {ManagerNavbar('all-students')}
+            {ManagerNavbar('all-students', Manager_dashboard_link, Manager_all_students_link, Manager_all_staff_link)}
             {All_students(student_dict)}
+            {footer()}
+        </div>
+    )
+}
+const Manager_all_staff = () => {
+    return(
+        <div className='container'>
+            {ManagerNavbar('my-students', Manager_dashboard_link, Manager_all_students_link, Manager_all_staff_link)}
+            {Staff_table(staff_dict)}
             {footer()}
         </div>
     )
 }
 
 
-const ManagerNavbar = (a) =>  {
-        const css_choosen_title =  {
-            fontWeight: "bold",
-            borderBottom: "1px solid black"
-        }
-    
-        if (a == 'dashboard'){
-            return(
-                <div className='Container'>
-                    <h2 className='main-title'>Avocado</h2>
-                    <h3 className='h3'>for managers</h3>
-                    <hr className='divider'></hr>
-                    <div className='Content-selector'>
-                        <button onClick={Manager_dashboard_link} style={css_choosen_title} id='staff-personal-dashboard'>Personal Dashboard</button>
-                        <button onClick={Manager_all_students_link} id='staff-all-student'>All students</button>
-                        <button id='staff-my-students'> My students</button>
-                        <button id='staff-my-students'> All-services</button>
-                    </div>
-                    <hr className='divider'></hr>
-                </div>
-            )
-        }
-    
-        if (a == 'all-students'){
-            return(
-                <div className='Container'>
-                    <h2 className='main-title'>Avocado</h2>
-                    <h3 className='h3'>for managers</h3>
-                    <hr className='divider'></hr>
-                    <div className='Content-selector'>
-                        <button onClick={Manager_dashboard_link} id='staff-personal-dashboard'>Personal Dashboard</button>
-                        <button onClick={Manager_all_students_link} style={css_choosen_title} id='staff-all-student'>All students</button>
-                        <button id='staff-my-students'> My students</button>
-                        <button id='staff-my-students'> All-services</button>
-                    </div>
-                    <hr className='divider'></hr>
-                </div>
-            )
-        }
-    
-        if (a == 'my-students'){
-            return(
-                <div className='Container'>
-                    <h2 className='main-title'>Avocado</h2>
-                    <h3 className='h3'>for managers</h3>
-                    <hr className='divider'></hr>
-                    <div className='Content-selector'>
-                        <button onClick={Manager_dashboard_link} id='staff-personal-dashboard'>Personal Dashboard</button>
-                        <button id='staff-all-student'>All students</button>
-                        <button style={css_choosen_title} id='staff-my-students'> My students</button>
-                        <button id='staff-my-students'> All-services</button>
-                    </div>
-                    <hr className='divider'></hr>
-                </div>
-            )
-        }
-
-        if (a == 'all-services'){
-            return(
-                <div className='Container'>
-                    <h2 className='main-title'>Avocado</h2>
-                    <h3 className='h3'>for managers</h3>
-                    <hr className='divider'></hr>
-                    <div className='Content-selector'>
-                        <button onClick={Manager_dashboard_link} id='staff-personal-dashboard'>Personal Dashboard</button>
-                        <button id='staff-all-student'>All students</button>
-                        <button id='staff-my-students'> My students</button>
-                        <button style={css_choosen_title} id='staff-my-students'> All-services</button>
-                    </div>
-                    <hr className='divider'></hr>
-                </div>
-            )
-        }
- }
-const staff_personalinformation = (staff_img, staff_name, staff_id, staff_phone, staff_mail, staff_date, staff_role) => {
-    return(
-        <div className='personal_info_container'>
-            <div className='image-container'>
-                <img src={staff_img} alt='abc'></img>
-            </div>
-            <div className='information-container'>
-                <h2 className='staff-sub-title'>Personal Information</h2>
-                <p><span className='bold'>Name: </span>{staff_name}</p>
-                <p><span className='bold'>Staff ID: </span>{staff_id}</p>
-                <p><span className='bold'>Phone: </span>{staff_phone}</p>
-                <p><span className='bold'>E-Mail: </span>{staff_mail}</p>
-                <p><span className='bold'>D.O.B: </span>{staff_date}</p>
-                <p><span className='bold'>Role: </span>{staff_role}</p>
-
-            </div>
-        </div>
-    )
-}
-const staff_personalreport = (title, arr) => {
-    function load_items(arr1) {
-        const list = [];
-        arr1.forEach((item) => {
-            list.push(
-                <div className='col'>
-                    <button className='personal-btn'>{item[0]}</button>
-                    <h3 className='h2 green'>{item[1]}</h3>
-                </div>
-            )
-        })
-        return list;
-    }
-
-
-    return(
-        <div style={{marginTop: '3vw'}} className='personalreport-container'>
-            <h2 className='staff-sub-title'>{title}</h2>
-            <div className='row'>
-                {load_items(arr)}
-            </div>
-        </div>
-    )
-}
 const Overdue_Billing = (billing_report) => {
     function loadStudentsTable(dic){
         const list = [];
@@ -256,6 +157,103 @@ const Overdue_Billing = (billing_report) => {
     </div>
     )
 }
+const LoadStudentInfo = () => {
+    const LoadStudent = () => {
+        return(
+            <div>
+                {ManagerNavbar('all-students', Manager_dashboard_link, Manager_all_students_link, Manager_all_staff_link)}
+                {Studentform('Student detail')}
+                {footer()}
+            </div>
+        )
+    }
+    return(
+        ReactDOM.render(< LoadStudent/>, document.getElementById('root'))
+    )
+}
+const LoadStaffInfo = () => {
+    const LoadStaff = () => {
+        return(
+            <div className='container'>
+                {ManagerNavbar('my-students', Manager_dashboard_link, Manager_all_students_link, Manager_all_staff_link)}
+                {staff_info('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/1200px-Black_colour.jpg', 'Staff A', '123', '0132491034', 'staffA@gmail.com', '20/3/2020', 'Sales', 12, 12, 12000, 12000)}
+                <h2 className='staff-sub-title'>Staff's Student</h2>
+                {my_student_table(student_dict, Manager_dashboard_link)}
+                {footer()}
+            </div>
+        )
+    }
+    return(
+        ReactDOM.render(< LoadStaff/>, document.getElementById('root'))
+    )
+}
+const Staff_table = (dic) => {
+    function loadStudentsTable(dic1){
+        const list = [];
+        dic1.forEach((sublist) => {
+            if (sublist[0]%2 == 0){
+                list.push(
+                <tr className='t0'>
+                    <button onClick={LoadStaffInfo} className='loadstudentfile'>{sublist[1]}</button>
+                    <td>{sublist[2]}</td>
+                    <td>{sublist[3]}</td>
+                    <td>{sublist[4]}</td>
+                    <td>{sublist[5]}</td>
+                    <td>{sublist[6]}</td>
+                    <td>{sublist[7]}</td>
+                    <td>{sublist[8]}</td>
+                    <td>{sublist[9]}</td>
+                    
+                    <button className='loadstudentfile'>Functions</button>
+                </tr>)
+            } else{
+                list.push(
+                <tr>
+                    <button onClick={LoadStaffInfo} className='t1 loadstudentfilet1'>{sublist[1]}</button>
+                    <td className='t1'>{sublist[2]}</td>
+                    <td className='t1'>{sublist[3]}</td>
+                    <td className='t1'>{sublist[4]}</td>
+                    <td className='t1'>{sublist[5]}</td>
+                    <td className='t1'>{sublist[6]}</td>
+                    <td className='t1'>{sublist[7]}</td>
+                    <td className='t1'>{sublist[8]}</td>
+                    <td className='t1'>{sublist[9]}</td>
+                    <button className='loadstudentfilet1 t1'>Functions</button>
+                </tr>)
+            }
+        })
+        return(
+                list
+        )
+    }
+
+    return(
+        <div style={{marginTop: '3vw'}} className='student_table_container'>
+            <div className='student_table'>
+                <table style={{width: '100%'}}>
+                    <thead>
+                        <tr>
+                            <th>Staff name</th>
+                            <th>StaffID</th>
+                            <th>Department</th>
+                            <th>Role</th>
+                            <th>D.O.B</th>
+                            <th>Phone number</th>
+                            <th>Email</th>
+                            <th>No. Students</th>
+                            <th>Salary</th>
+                            <th>Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {loadStudentsTable(dic)}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    )
+}
+
 const All_students = (all_student_report) => {
     function loadStudentsTable(dic){
         const list = [];
@@ -263,7 +261,7 @@ const All_students = (all_student_report) => {
             if (sublist[0]%2 == 0){
                 list.push(
                 <tr className='t0'>
-                    <td>{sublist[1]}</td>
+                    <button onClick={LoadStudentInfo} className='loadstudentfile'>{sublist[1]}</button>
                     <td>{sublist[2]}</td>
                     <td>{sublist[3]}</td>
                     <td>{sublist[4]}</td>
@@ -274,8 +272,8 @@ const All_students = (all_student_report) => {
                 </tr>)
             } else{
                 list.push(
-                <tr>
-                    <td  className='t1'>{sublist[1]}</td>
+                <tr >
+                    <button onClick={LoadStudentInfo} className='t1 loadstudentfilet1'>{sublist[1]}</button>
                     <td  className='t1'>{sublist[2]}</td>
                     <td  className='t1'>{sublist[3]}</td>
                     <td  className='t1'>{sublist[4]}</td>
@@ -290,7 +288,6 @@ const All_students = (all_student_report) => {
                 list
         )
     }
-
     return(
         <div style={{marginTop: '3vw'}} className='student_table_container'>
             <div className='student_table'>
@@ -317,14 +314,4 @@ const All_students = (all_student_report) => {
 }
 
 
-
-const footer = () => {
-    return(
-        <footer>
-            <h6>Copyright © Avocado Prep 2022. All rights reserved</h6>
-        </footer>
-    )
-}
-
-
-export default Manager_dashboard_link;
+export default (Manager_dashboard_link)
