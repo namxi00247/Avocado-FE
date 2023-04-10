@@ -1,3 +1,4 @@
+// Load page when first clicked
 import React from 'react';
 import ReactDOM from 'react-dom';
 

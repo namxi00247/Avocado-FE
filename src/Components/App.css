@@ -190,7 +190,7 @@
   align-items: center;
 
   box-sizing: border-box;
-  height: 420px;
+  height: 60%;
   width: 40%;
   position: absolute;
   background: linear-gradient(90deg, #DCEDDD 0%, #D2E9DB 21.18%, #C1E3D8 33.68%, #B3DDD6 50.87%, #A4D8D3 72.74%, #9AD4D1 85.24%, #8DCFCF 100%);
@@ -375,8 +375,11 @@
 }
 .row{
   justify-content: center;
+  display: flex;
 }
-
+.row3{
+  display: flex;
+}
 .row1{
   width: 100%;
   display: flex;
@@ -408,7 +411,12 @@
 .choosen-hr{
   border: 0.2vw solid #3aa968;
   transform: rotate(-0.21deg);
-  width: 15vw;
+  width: 18.5vw;
+}
+.notchoosen-hr{
+  border: 0.2vw solid white;
+  transform: rotate(-0.21deg);
+  width: 18.5vw;
 }
 
 .font-inter{
@@ -703,7 +711,7 @@ div{
   background-color: white;
   z-index: 2;
   position: absolute;
-  top: 10vw;
+  top: 20vw;
   padding: 5vw;
   width: 50vw;
   display: flex;

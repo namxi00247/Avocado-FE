@@ -3,34 +3,27 @@ import './App.css';
 import ReactDOM from 'react-dom';
 import StaffLogin from './stafflogin';
 import Studentform from './Components/studentform';
+import image1 from './Components/image1.png';
 
-const Title = () => {
+// Form after clicked to "Student" on the landing page
+const Completeform = () => {
   return(
-    <h2 className = "main-title container">Mentorship registration form</h2>
-  )
-}
-const Root2 = () => {
-  return(
-    <div className='container'>
+    <div>
+      <h2 className = "main-title container">Mentorship registration form</h2>
+      {Studentform('')}
+      <div className='container'>
          <h1 className='h1'>We value your <span className='green'>trust </span> and <span className='green'> confidence </span> in us</h1>
          <h4 className='h1' id='content1'>We look forward to serve you </h4>
          <button id = 'student-submit'className='btn green-btn'>Submit</button>
          <h5 className='h5'>**Our team will reach out to you in 24-48 hours after this form is completed</h5>
     </div>
-  )
-}
-const Completeform = () => {
-  return(
-    <div>
-      {Title()}
-      {Studentform('')}
-      {Root2()}
-    {}
+      <img src={image1} alt = '' style={{width: '100vw'}}/>
     </div>
 
   )
 }
 
+// Load landing page
 const Landing = () => {
   const openStudent = () => {
     ReactDOM.render(< Completeform/>, document.getElementById('root'));

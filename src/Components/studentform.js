@@ -7,9 +7,8 @@ import longtextform from './longtextform';
 const Studentform = (title) => {
     return (
         <div id = 'student-border1' className='student-border container'>
-
             <div className='student-container'>
-            <h1 className='main-title'>{title}</h1>
+            <h1 className='main-title' style={{margin: "0"}}>{title}</h1>
             {shorttextform('Full Name', 'student-name')}
             {shorttextform('E-Mail', 'student-mail')}
             {shorttextform('Link facebook', 'student-facebook')}

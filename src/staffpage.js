@@ -10,9 +10,10 @@ import dropdownform from './Components/dropdownbox';
 import staff_info from './Components/staffpersonalinfo';
 import Studentform from './Components/studentform';
 import my_student_table from './Components/mystudenttable';
+import overlapbutton from './Components/overlapbutton';
 
 
-// Test dictionary
+// Sample data input
 var student_dict = [
     [
         '0',
@@ -51,8 +52,8 @@ var student_dict = [
         '0'
     ],
 ]
-// Staff login links
 
+// Staff links
 const Staff_dashboard_link = () => {
     return(
         ReactDOM.render(< Staff_dashboard/>, document.getElementById('root'))
@@ -86,14 +87,14 @@ const create_Contract_link = () => {
                     </div>
                     <div style = {{opacity: '2'}} id="contract-container" className='student-border'>
                         <div className='student-container'>
-                            {shorttextform('form-div', 'Full name', 'name')}
-                            {shorttextform('form-div', 'Email', 'mail')}
-                            {shorttextform('form-div', 'Link facebook', 'facebook')}
-                            {shorttextform('form-div', 'Phone number', 'phone')}
-                            {shorttextform('form-div', 'Grade', 'grade')}
-                            {shorttextform('form-div', `Parent's name`, 'grade')}
-                            {shorttextform('form-div', `Parent's ID number`, 'grade')}
-                            {shorttextform('form-div', `Parent's phone number`, 'grade')}
+                            {shorttextform( 'Full name', 'name')}
+                            {shorttextform('Email', 'mail')}
+                            {shorttextform('Link facebook', 'facebook')}
+                            {shorttextform('Phone number', 'phone')}
+                            {shorttextform('Grade', 'grade')}
+                            {shorttextform(`Parent's name`, 'grade')}
+                            {shorttextform(`Parent's ID number`, 'grade')}
+                            {shorttextform(`Parent's phone number`, 'grade')}
                             {dropdownform('Signed up course', ['Mentor 1-1', 'class'])}
                             {dropdownform('Total contract amount', ['Mentor 1-1', 'class'])}
                             {/* Do later: using for loops to load correspond for how many transaction */}
@@ -128,17 +129,36 @@ const create_Contract_link = () => {
     )
 }
 
+
+// All the over-layering part
+const student_confirmation = () => {
+    const Create_Contracts  = () => {
+        return(
+            <div>
+                <div className='container' id='container'>
+                    {staffNavbar('all-students', Staff_dashboard_link, All_students_link, My_students_link)}
+                    {Studentform("Student's detail")}
+                    <button onClick={student_confirmation} className='btn green-btn'>Choose this student</button>
+                    {footer()}
+                </div>
+                <div id="container-container">
+                    {overlapbutton('Confirm your student', All_students_link, Student_details_link, 'overlapper3')}
+                </div>
+
+            </div>
+    
+            
+        )
+    }
+    
+    return(
+        ReactDOM.render(< Create_Contracts/>, document.getElementById('root'))
+    )
+}
 const Save_contract = () => { 
     function Save_contract_confirm() {
         return(
-            <div className='saving-container'>
-                <div className='overlapper2'></div>
-                <div className='saving-box'>
-                    <h2 className='main-title'>Saving contract information</h2>
-                    <button onClick={save_contract_button} className='btn green-btn'>Yes</button>
-                    <button className='btn'>Cancel</button>
-                </div>
-            </div>
+            overlapbutton('Save Contract Information', save_contract_button, create_Contract_link,'overlapper2')
         )
     };
     ReactDOM.render(< Save_contract_confirm/>, document.getElementById('container-container'));
@@ -217,7 +237,7 @@ const student_table = (students) => {
     )
 }
 
-// load 
+// load pages
 const Staff_dashboard = () => {
     return(
         <div className='container'>
@@ -249,8 +269,8 @@ const Student_details = () => {
     return(
         <div className='container'>
             {staffNavbar('all-students', Staff_dashboard_link, All_students_link, My_students_link)}
-             {Studentform()}
-            <button className='btn green-btn'>Choose this student</button>
+             {Studentform("Student's detail")}
+            <button onClick={student_confirmation} className='btn green-btn'>Choose this student</button>
             {footer()}
         </div>
     )

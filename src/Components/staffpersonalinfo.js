@@ -48,7 +48,7 @@ const staff_personalreport = (pending, ongoing, success, income) => {
 }
 const staff_info = (a, b, c, d, e, f, g, h, i, j, k) => {
     return(
-        <div>
+        <div className='container'>
             {staff_personalinformation(a, b, c, d, e, f, g)}
             {staff_personalreport(h, i, j, k)}  
         </div>

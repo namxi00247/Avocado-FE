@@ -47,7 +47,7 @@ const my_student_table = (students, link) => {
         )
     }
     return(
-        <div className='biling_table_container'>
+        <div className='student_table_container'>
             <div className='student_table'>
                 <table>
                     <thead>
